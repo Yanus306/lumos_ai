@@ -1,0 +1,29 @@
+# 다크패턴 위험도 분류 데이터셋 설정
+# 원본 YOLO 탐지 데이터셋을 기반으로 위험도(소/중/대)를 이미지 단위로 분류
+
+# 데이터 경로 (risk_classifier/ 기준)
+data_root: ../   # 원본 데이터셋 루트
+train_images: ../train/images
+valid_images: ../valid/images
+test_images:  ../test/images
+
+# 생성되는 CSV 레이블 파일 (prepare_data.py 실행 후 생성)
+train_csv: train_labels.csv
+valid_csv: valid_labels.csv
+test_csv:  test_labels.csv
+
+# 위험도 클래스 (3개)
+nc: 3
+names:
+  0: 소   # Low   - 다크패턴 없거나 1개 이하
+  1: 중   # Medium - 2~4개 탐지, 고위험 클래스(2,3) 미포함
+  2: 대   # High  - 5개 이상 또는 고위험 클래스(2,3) 포함
+
+# 위험도 판정 기준 (prepare_data.py에서 사용)
+risk_rules:
+  # YOLO 클래스 0,1 → 저위험, 클래스 2,3 → 고위험
+  high_risk_classes: [2, 3]
+  thresholds:
+    low_max: 1        # 탐지 수 0~1 → 소
+    medium_max: 4     # 탐지 수 2~4 (고위험 클래스 없음) → 중
+    # 5개 이상 또는 고위험 클래스 포함 → 대

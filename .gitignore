@@ -1,0 +1,35 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyTorch
+*.pt
+!handover/**/*.pt
+runs/
+!runs/detect/runs/detect/dark_pattern_train/weights/best.pt
+!risk_classifier/runs/risk_classifier_v1/best.pt
+
+# Virtual Environments
+venv/
+env/
+.env
+
+# MacOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# Data
+*.csv
+!train_labels.csv
+!valid_labels.csv
+!test_labels.csv
+*.yaml
+!data.yaml
+
+# Datasets
+train/
+valid/
+test/

@@ -1,0 +1,17 @@
+# Dark Pattern Detection Dataset Configuration for YOLOv8
+
+# Dataset paths (relative to this file)
+path: .  # dataset root dir
+train: train/images  # train images
+val: valid/images    # validation images
+test: test/images    # test images
+
+# Number of classes
+nc: 4
+
+# Class names
+names:
+  0: dark_pattern_0
+  1: dark_pattern_1
+  2: dark_pattern_2
+  3: dark_pattern_3
