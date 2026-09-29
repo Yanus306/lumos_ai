@@ -1,0 +1,9 @@
+{
+  "accuracy": 0.9575,
+  "f1": 0.9501,
+  "precision": 0.9431,
+  "recall": 0.9575,
+  "auc": 0.0,
+  "best_epoch": 3,
+  "model": "roberta-base"
+}
