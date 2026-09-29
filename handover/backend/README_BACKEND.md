@@ -17,7 +17,7 @@
 * **무엇을 반환하나요?**: 각각의 소/중/대 위험도에 대한 모델의 확신 퍼센티지(확률값)와 최종 결정된 기준 위험도를 반환합니다.
 
 ### 3. `darkpattern-detector/` (텍스트 다크패턴 심층 탐지 및 유형 분류 모델)
-* **어떤 모델인가요?**: 웹페이지 내 텍스트나 문구(예: *"Hurry! Only 2 left in stock"*, *"No thanks, I hate saving money"*)를 분석하여 **다크패턴 여부와 세부 유형(7종)을 96.5% F1-score로 정밀 분류**하는 RoBERTa-base 파인튜닝 모델입니다.
+* **어떤 모델인가요?**: 웹페이지 내 텍스트나 문구(예: *"Hurry! Only 2 left in stock"*, *"No thanks, I hate saving money"*)를 분석하여 **다크패턴 여부와 세부 유형(7종)을 96.5% F1-score로 정밀 분류**하는 RoBERTa-base 파인튜닝 모델입니다. (저장소 최상위 루트 `darkpattern-detector/` 에 위치)
 * **무엇을 반환하나요?**: 다크패턴 여부(`is_dark_pattern`), 확률(`probability`), 세부 카테고리(`Scarcity`, `Urgency`, `Social Proof`, `Misdirection` 등 7종), 한글/영문 설명.
 * **어떻게 쓰나요?**: `darkpattern-detector/detector.py`를 임포트하여 `detector.predict(text)` 한 줄로 바로 사용 가능합니다. (상세 안내는 내부 `README.md` 참고)
 
